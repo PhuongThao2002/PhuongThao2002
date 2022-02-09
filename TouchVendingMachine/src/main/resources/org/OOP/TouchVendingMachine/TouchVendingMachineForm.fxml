@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="680.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.OOP.TouchVendingMachine.Controller.TVMController">
+   <children>
+      <ImageView fx:id="imageView" fitHeight="680.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/background.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="button_addToCart" layoutX="152.0" layoutY="603.0" mnemonicParsing="false" onAction="#addClicked" prefHeight="20.0" prefWidth="257.0" text="Chose and Add to Cart" textFill="#7a5d30">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="button_delete" layoutX="492.0" layoutY="155.0" mnemonicParsing="false" onAction="#deleteClicked" prefHeight="22.0" prefWidth="178.0" text="Chose and Delete" textFill="#7a5d30">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="button_DeleteAll" layoutX="754.0" layoutY="155.0" mnemonicParsing="false" onAction="#deleteAll" prefHeight="31.0" prefWidth="104.0" text="Delete all" textFill="#7a5d30">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="button_pay" layoutX="605.0" layoutY="603.0" mnemonicParsing="false" onAction="#payClicked" prefHeight="31.0" prefWidth="216.0">
+         <graphic>
+            <Text fx:id="textPay" fill="#7a5d30" strokeType="OUTSIDE" strokeWidth="0.0" text="PAY: 0 VND">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+         </graphic>
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <RadioButton fx:id="radioButton_S" layoutX="135.0" layoutY="232.0" mnemonicParsing="false" onAction="#rbClicked" text="S" textFill="#7a5d30">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="rb_size" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="radioButton_M" layoutX="207.0" layoutY="232.0" mnemonicParsing="false" onAction="#rbClicked" text="M" textFill="#7a5d30" toggleGroup="$rb_size">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="radioButton_All" layoutX="357.0" layoutY="232.0" mnemonicParsing="false" onAction="#rbClicked" text="ALL" textFill="#7a5d30" toggleGroup="$rb_size">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="radioButton_L" layoutX="288.0" layoutY="232.0" mnemonicParsing="false" onAction="#rbClicked" text="L" textFill="#7a5d30" toggleGroup="$rb_size">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </RadioButton>
+      <TableView fx:id="tableMenu" layoutX="41.0" layoutY="302.0" prefHeight="256.0" prefWidth="366.0">
+        <columns>
+          <TableColumn fx:id="colum_STT" prefWidth="51.199981689453125" text="ID" />
+          <TableColumn fx:id="colum_Name" prefWidth="164.80001068115234" text="Name" />
+            <TableColumn fx:id="colum_Size" prefWidth="48.79998779296875" text="Size" />
+            <TableColumn fx:id="colum_Price" prefWidth="104.800048828125" text="Price (VND)" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tableCart" layoutX="492.0" layoutY="230.0" prefHeight="328.0" prefWidth="366.0">
+        <columns>
+          <TableColumn fx:id="colum_idCart" prefWidth="43.199981689453125" text="ID" />
+          <TableColumn fx:id="colum_nameCart" prefWidth="147.20001220703125" text="Name" />
+            <TableColumn fx:id="colum_sizeCart" prefWidth="43.20001220703125" text="Size" />
+            <TableColumn fx:id="colum_priceCart" prefWidth="74.400146484375" text="Price (VND)" />
+            <TableColumn fx:id="colum_quantilyCart" prefWidth="57.59995117187498" text="Quantily" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="comboBox_Type" layoutX="177.0" layoutY="154.0" onAction="#TypeCliked" prefHeight="38.0" prefWidth="178.0" />
+      <Text fx:id="textTotal" fill="#7a5d30" layoutX="796.0" layoutY="587.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="49.600000000000136">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </Text>
+      <Line endX="17.999969482421875" endY="662.7000122070312" layoutX="432.0" layoutY="28.0" startX="17.999969482421875" startY="-27.999998092651367" stroke="#73532e" />
+      <Line endX="17.199981689453125" endY="657.0" layoutX="442.0" layoutY="33.0" startX="17.199981689453125" startY="-33.0" stroke="#73532e" />
+   </children>
+</AnchorPane>
